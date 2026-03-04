@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>JACKPOT SLOTS</h1>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="label">CREDITS</span>
+                <span id="credits-value">100</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">LAST WIN</span>
+                <span id="win-value">0</span>
+            </div>
+        </div>
+
+        <div class="bet-controls">
+            <span class="label">BET AMOUNT</span>
+            <div class="bet-buttons">
+                <button class="bet-btn active" data-bet="5">5</button>
+                <button class="bet-btn" data-bet="10">10</button>
+                <button class="bet-btn" data-bet="25">25</button>
+                <button class="bet-btn" data-bet="50">50</button>
+            </div>
+        </div>
+
+        <div class="slot-machine-wrapper">
+            <div class="slot-machine" id="machine-body">
+                <div class="reel-container">
+                    <div class="reel" id="reel1"></div>
+                    <div class="reel" id="reel2"></div>
+                    <div class="reel" id="reel3"></div>
+                    <div class="overlay"></div>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <h3>RECENT WINS</h3>
+                <div id="win-history" class="history-log">
+                    <div class="empty-msg">No wins yet...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="spin-button">SPIN (<span id="current-bet-display">5</span>)</button>
+        </div>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Game Over Modal -->
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>GAME OVER</h2>
+            <p>Keine Credits mehr übrig!</p>
+            <p>Möchtest du mit Bonus-Credits weiterspielen?</p>
+            <button id="restart-button">JA, BITTE! (+50)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
